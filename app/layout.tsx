@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
-  verification: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION
-    ? { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION }
-    : undefined,
+  verification: {
+    google: 'DAPgklfibhKnon_LDH-UqCdVFd41qVwC3IeCdurdOMM',
+  },
 };
 
 export default function RootLayout({

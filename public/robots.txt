@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /og/
+
+User-Agent: GPTBot
+Disallow: /
+
+User-Agent: CCBot
+Disallow: /
+
+Host: https://www.controlresonantguide.com
+Sitemap: https://www.controlresonantguide.com/sitemap.xml

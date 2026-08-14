@@ -101,7 +101,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col" style={{ background: 'var(--bg-deep)' }}>
-        <GoogleAnalytics gaId={siteConfig.gaId} />
+        {siteConfig.gaId && <GoogleAnalytics gaId={siteConfig.gaId} />}
         <Header />
 
         {/* Main Content */}

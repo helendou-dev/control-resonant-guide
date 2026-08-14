@@ -95,7 +95,7 @@ export default function AboutClient() {
               <span className="gradient-text">You&apos;re Playing Now</span>
             </h1>
             <p className="text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Control Resonant Wiki is your go-to source for tier lists, build guides, patch breakdowns,
+              Control Resonant Guide is your go-to source for tier lists, build guides, patch breakdowns,
               and bug fixes. We cover the games everyone&apos;s playing — fresh, accurate, and
               actually helpful.
             </p>
@@ -252,7 +252,7 @@ export default function AboutClient() {
             className="text-center mb-12"
           >
             <h2 className="section-title">FAQ</h2>
-            <p className="section-subtitle">Common questions about Control Resonant Wiki</p>
+            <p className="section-subtitle">Common questions about Control Resonant Guide</p>
           </motion.div>
 
           <div className="space-y-3">

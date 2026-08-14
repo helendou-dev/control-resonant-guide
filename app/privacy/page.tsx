@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Privacy Policy — Control Resonant Wiki' },
-  description: 'Control Resonant Wiki privacy policy — learn how we collect, use, and protect your data.',
+  title: { absolute: 'Privacy Policy — Control Resonant Guide' },
+  description: 'Control Resonant Guide privacy policy — learn how we collect, use, and protect your data.',
   alternates: { canonical: `${siteConfig.url}/privacy` },
 };
 
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-lg font-bold mb-3" style={{ color: 'var(--text-primary)' }}>4. Third-Party Services</h2>
           <p className="leading-relaxed text-sm">
-            Our website may contain links to external sites (game developers, publishers, community wikis).
+            Our website may contain links to external sites (game developers, publishers, community guides).
             We are not responsible for the privacy practices of these third-party websites.
           </p>
         </section>
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-lg font-bold mb-3" style={{ color: 'var(--text-primary)' }}>5. Children&quot;s Privacy</h2>
           <p className="leading-relaxed text-sm">
-            Control Resonant Wiki is a general-audience gaming resource. We do not knowingly collect
+            Control Resonant Guide is a general-audience gaming resource. We do not knowingly collect
             information from children under 13. If you believe your child has provided us
             with personal information, please contact us immediately.
           </p>

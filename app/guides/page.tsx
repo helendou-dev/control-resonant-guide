@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'Game Guides — Control Resonant Wiki',
+  title: 'Game Guides — Control Resonant Guide',
   description: 'Expert game guides, walkthroughs, tips and tricks for PC, console, and mobile games.',
-  alternates: { canonical: 'https://controlresonantguide.com/guides' },
+  alternates: { canonical: `${siteConfig.url}/guides` },
 };
 
 export default function GuidesPage() {

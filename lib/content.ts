@@ -77,7 +77,7 @@ export function normalizeEntry(
     description: fm.description || fm.metaDescription || '',
     type: (fm.type || fm.contentType || 'guide') as string,
     date: (fm.publishDate || fm.publishedAt || fm.updatedAt || fm.date || '') as string,
-    author: (fm.author || 'Control Resonant Wiki') as string,
+    author: (fm.author || 'Control Resonant Guide') as string,
     tags: (fm.tags || []) as string[],
     image: (fm.image || fm.featuredImage || fm.ogImage || '') as string | undefined,
     url: `/games/${game}/${slug}`,
@@ -212,12 +212,12 @@ export function generatePageJsonLd(
     datePublished: publishDate,
     dateModified: modifiedDate,
     inLanguage: 'en',
-    author: frontmatter.author && frontmatter.author !== 'Control Resonant Wiki'
+    author: frontmatter.author && frontmatter.author !== 'Control Resonant Guide'
       ? { '@type': 'Person', name: frontmatter.author, url: `${siteConfig.url}/about` }
-      : { '@type': 'Organization', name: 'Control Resonant Wiki', url: siteConfig.url },
+      : { '@type': 'Organization', name: 'Control Resonant Guide', url: siteConfig.url },
     publisher: {
       '@type': 'Organization',
-      name: 'Control Resonant Wiki',
+      name: 'Control Resonant Guide',
       url: siteConfig.url,
       logo: {
         '@type': 'ImageObject',

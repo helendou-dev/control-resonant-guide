@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Contact Us — Control Resonant Wiki' },
-  description: 'Get in touch with the Control Resonant Wiki team — feedback, suggestions, collaboration inquiries, and guide requests.',
+  title: { absolute: 'Contact Us — Control Resonant Guide' },
+  description: 'Get in touch with the Control Resonant Guide team — feedback, suggestions, collaboration inquiries, and guide requests.',
   alternates: { canonical: `${siteConfig.url}/contact` },
 };
 

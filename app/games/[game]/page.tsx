@@ -30,7 +30,7 @@ export async function generateMetadata({
     description: meta.description,
     alternates: { canonical: `${siteConfig.url}/games/${params.game}` },
     openGraph: {
-      title: `${meta.name} — Control Resonant Wiki`,
+      title: `${meta.name} — Control Resonant Guide`,
       description: meta.description,
       url: `${siteConfig.url}/games/${params.game}`,
       ...(meta.headerImage ? { images: [{ url: meta.headerImage, width: 1200, height: 630 }] } : {}),
@@ -334,7 +334,7 @@ export default function GameHubPage({
             📖 Essential Control Resonant Pages
           </h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
-            The quickest routes into the wiki — from pre-order to day-one
+            The quickest routes into the guide — from pre-order to day-one
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

@@ -126,7 +126,7 @@ export default async function GameContentPage({
   const typeLabel = TYPE_LABEL[frontmatter.type || ''] || '🎮 Article';
   const typeBadge = TYPE_BADGE[frontmatter.type || ''] || 'type-badge-guide';
   const heroImage = (frontmatter.image as string) || (frontmatter.ogImage as string) || (frontmatter.headerImage as string) || '';
-  const author = (frontmatter.author as string) || 'Control Resonant Wiki';
+  const author = (frontmatter.author as string) || 'Control Resonant Guide';
   const publishDate = frontmatter.publishDate || frontmatter.date;
 
   const allArticles = listAllContent();
@@ -286,7 +286,7 @@ export default async function GameContentPage({
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm"
                 style={{ color: 'var(--text-secondary)' }}>
                 <div>
-                  <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>Control Resonant Wiki</p>
+                  <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>Control Resonant Guide</p>
                   <p>Your go-to source for trending game guides and news.</p>
                 </div>
                 <div className="flex gap-4">

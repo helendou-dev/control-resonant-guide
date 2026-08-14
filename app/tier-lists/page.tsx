@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'Tier Lists — Control Resonant Wiki',
+  title: 'Tier Lists — Control Resonant Guide',
   description: 'Definitive game tier lists: best characters, weapons, builds, and more. Updated with latest patches.',
-  alternates: { canonical: 'https://controlresonantguide.com/tier-lists' },
+  alternates: { canonical: `${siteConfig.url}/tier-lists` },
 };
 
 export default function TierListsPage() {

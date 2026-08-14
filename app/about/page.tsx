@@ -7,11 +7,11 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: { absolute: 'About Control Resonant Wiki — Your Gaming Guide Authority' },
-  description: 'Learn about the Control Resonant Wiki team, our mission, and how we create the most helpful gaming guides, tier lists, and news coverage on the web.',
+  title: { absolute: 'About Control Resonant Guide — Your Gaming Guide Authority' },
+  description: 'Learn about the Control Resonant Guide team, our mission, and how we create the most helpful gaming guides, tier lists, and news coverage on the web.',
   alternates: { canonical: `${siteConfig.url}/about` },
   openGraph: {
-    title: 'About Control Resonant Wiki',
+    title: 'About Control Resonant Guide',
     description: 'Meet the team behind the most comprehensive gaming guide resource.',
     url: `${siteConfig.url}/about`,
     type: 'website',
@@ -22,7 +22,7 @@ export default function AboutPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Control Resonant Wiki',
+    name: 'Control Resonant Guide',
     url: siteConfig.url,
     description: 'Your go-to source for trending game guides, tier lists, and news coverage.',
     foundingDate: '2026',
@@ -43,11 +43,11 @@ export default function AboutPage() {
 
         {/* Hero */}
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-6" style={{ color: 'var(--text-primary)' }}>
-          About Control Resonant Wiki
+          About Control Resonant Guide
         </h1>
 
         <p className="text-lg leading-relaxed mb-10" style={{ color: 'var(--text-secondary)' }}>
-          Control Resonant Wiki is a dedicated gaming guide platform built for players who want to win.
+          Control Resonant Guide is a dedicated gaming guide platform built for players who want to win.
           We combine real player experience with data-driven research to deliver the most
           accurate, up-to-date, and actionable gaming guides on the web.
         </p>
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>👥 The Team</h2>
           <div className="p-6 rounded-2xl" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)' }}>
             <p className="leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-              Control Resonant Wiki is built by a small team of passionate gamers, content strategists, and developers.
+              Control Resonant Guide is built by a small team of passionate gamers, content strategists, and developers.
               We&apos;re players first — we&apos;ve logged thousands of hours across RPGs, survival games, MOBAs,
               and everything in between. That hands-on experience is what sets our guides apart.
             </p>

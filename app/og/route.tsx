@@ -23,7 +23,7 @@ const typeColors: Record<string, [string, string]> = {
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const title = searchParams.get('title') || 'Control Resonant Wiki';
+  const title = searchParams.get('title') || 'Control Resonant Guide';
   const type = searchParams.get('type') || 'default';
   const game = searchParams.get('game') || '';
 
@@ -130,7 +130,7 @@ export async function GET(request: NextRequest) {
               fontWeight: 600,
             }}
           >
-            🎮 Control Resonant Wiki
+            🎮 Control Resonant Guide
           </div>
           <div
             style={{

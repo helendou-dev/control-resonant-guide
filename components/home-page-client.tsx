@@ -29,7 +29,7 @@ function formatDate(dateStr: string): string {
 }
 
 // ============================================
-// Data — mirrors the game (single-game wiki)
+// Data — mirrors the game (single-game guide)
 // ============================================
 
 const QUICK_FACTS = [
@@ -130,7 +130,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6"
               style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', color: '#a78bfa' }}>
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#a78bfa' }} />
-              Unofficial Fan-Made Wiki
+              Unofficial Fan-Made Guide
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4">
               <span style={{ color: 'var(--text-primary)' }}>Control:</span>{' '}
@@ -254,7 +254,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             className="text-center mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>
-              📖 The Wiki Codex
+              📖 The Codex
             </h2>
             <p className="text-sm md:text-base mt-2" style={{ color: 'var(--text-secondary)' }}>
               Every guide you need before launch — and after

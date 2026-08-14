@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'Game Fixes & Troubleshooting — Control Resonant Wiki',
+  title: 'Game Fixes & Troubleshooting — Control Resonant Guide',
   description: 'Fix crashes, stuttering, low FPS, and other PC gaming issues. Step-by-step troubleshooting guides.',
-  alternates: { canonical: 'https://controlresonantguide.com/fixes' },
+  alternates: { canonical: `${siteConfig.url}/fixes` },
 };
 
 export default function FixesPage() {

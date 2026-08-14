@@ -8,11 +8,11 @@ import Header from '@/components/header';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Control Resonant Wiki — Guides, Weapons & Pre-Order Info',
-    template: '%s | Control Resonant Wiki',
+    default: 'Control Resonant Guide — Guides, Weapons & Pre-Order Info',
+    template: '%s | Control Resonant Guide',
   },
   description:
-    'The unofficial Control Resonant wiki and guide hub. Release date, pre-order guide, Aberrant weapon forms, beginner guide, and daily news for Remedy\u2019s September 24, 2026 launch.',
+    'The unofficial Control Resonant guide hub. Release date, pre-order guide, Aberrant weapon forms, beginner guide, and daily news for Remedy\u2019s September 24, 2026 launch.',
   keywords: [
     'control resonant',
     'control 2',
@@ -25,18 +25,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    siteName: 'Control Resonant Wiki',
+    siteName: 'Control Resonant Guide',
     locale: 'en_US',
-    title: 'Control Resonant Wiki — Guides, Weapons & Pre-Order Info',
+    title: 'Control Resonant Guide — Guides, Weapons & Pre-Order Info',
     description:
       'Release date, pre-order guide, Aberrant weapon forms, beginner guide, and daily news for Remedy\u2019s Control Resonant.',
     url: siteConfig.url,
     images: [
       {
-        url: '/og?title=Control+Resonant+Wiki+—+Guides+%26+Pre-Order+Info&type=default',
+        url: '/og?title=Control+Resonant+Guide+—+Guides+%26+Pre-Order+Info&type=default',
         width: 1200,
         height: 630,
-        alt: 'Control Resonant Wiki — Guides & Pre-Order Info',
+        alt: 'Control Resonant Guide — Guides & Pre-Order Info',
       },
     ],
   },
@@ -77,10 +77,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Control Resonant Wiki',
+              name: 'Control Resonant Guide',
               url: siteConfig.url,
               description:
-                'Unofficial fan-made wiki and guide hub for Control Resonant, Remedy Entertainment\u2019s 2026 action RPG sequel.',
+                'Unofficial fan-made guide hub for Control Resonant, Remedy Entertainment\u2019s 2026 action RPG sequel.',
               foundingDate: '2026',
               logo: `${siteConfig.url}/icon.png`,
             }),
@@ -94,7 +94,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'Control Resonant Wiki',
+              name: 'Control Resonant Guide',
               url: siteConfig.url,
             }),
           }}
@@ -122,10 +122,10 @@ export default function RootLayout({
                   >
                     C
                   </span>
-                  <span className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>Control Resonant Wiki</span>
+                  <span className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>Control Resonant Guide</span>
                 </div>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-                  The unofficial fan-made wiki for Control Resonant. Release date, pre-order info,
+                  The unofficial fan-made guide for Control Resonant. Release date, pre-order info,
                   Aberrant weapon forms, beginner guides, and daily news — updated by real players.
                 </p>
               </div>
@@ -184,8 +184,8 @@ export default function RootLayout({
           {/* Bottom bar */}
           <div className="border-t py-6" style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style={{ color: 'var(--text-muted)' }}>
-              <span>&copy; {new Date().getFullYear()} Control Resonant Wiki. All rights reserved.</span>
-              <span>Control Resonant Wiki is reader-supported. When you buy through links on our site, we may earn an affiliate commission.</span>
+              <span>&copy; {new Date().getFullYear()} Control Resonant Guide. All rights reserved.</span>
+              <span>Control Resonant Guide is reader-supported. When you buy through links on our site, we may earn an affiliate commission.</span>
             </div>
           </div>
         </footer>

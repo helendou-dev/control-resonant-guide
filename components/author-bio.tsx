@@ -28,11 +28,11 @@ export default function AuthorBio({ author, date }: { author: string; date?: str
           </h3>
           <span className="px-2 py-0.5 rounded-full text-xs font-semibold"
             style={{ background: 'rgba(139,92,246,0.1)', color: '#a78bfa' }}>
-            Control Resonant Wiki Editor
+            Control Resonant Guide Editor
           </span>
         </div>
         <p className="text-sm leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
-          Part of the Control Resonant Wiki editorial team. We combine real player experience with SEO-driven research
+          Part of the Control Resonant Guide editorial team. We combine real player experience with SEO-driven research
           to bring you the most helpful gaming guides on the web.
         </p>
         {date && (

@@ -2,15 +2,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent, type ContentListItem } from '@/lib/content';
 import { getGameCard } from '@/lib/game-data';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'All Games — Control Resonant Wiki',
-  description: 'Browse all game guides, tier lists, patch notes, and news on Control Resonant Wiki.',
-  alternates: { canonical: 'https://controlresonantguide.com/games' },
+  title: 'All Games — Control Resonant Guide',
+  description: 'Browse all game guides, tier lists, patch notes, and news on Control Resonant Guide.',
+  alternates: { canonical: `${siteConfig.url}/games` },
   openGraph: {
-    title: 'All Games — Control Resonant Wiki',
-    description: 'Browse all game guides, tier lists, patch notes, and news on Control Resonant Wiki.',
-    url: 'https://controlresonantguide.com/games',
+    title: 'All Games — Control Resonant Guide',
+    description: 'Browse all game guides, tier lists, patch notes, and news on Control Resonant Guide.',
+    url: `${siteConfig.url}/games`,
   },
 };
 

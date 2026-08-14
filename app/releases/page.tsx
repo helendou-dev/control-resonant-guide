@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'Game Releases & DLC Launch Guides — Control Resonant Wiki',
+  title: 'Game Releases & DLC Launch Guides — Control Resonant Guide',
   description: 'New game releases, DLC launch guides, and preparation checklists. Get ready before launch day.',
-  alternates: { canonical: 'https://controlresonantguide.com/releases' },
+  alternates: { canonical: `${siteConfig.url}/releases` },
 };
 
 export default function ReleasesPage() {

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'Game Comparisons — Control Resonant Wiki',
+  title: 'Game Comparisons — Control Resonant Guide',
   description: 'Head-to-head game comparisons. See which game wins on combat, story, graphics, and more.',
-  alternates: { canonical: 'https://controlresonantguide.com/comparisons' },
+  alternates: { canonical: `${siteConfig.url}/comparisons` },
 };
 
 export default function ComparisonsPage() {

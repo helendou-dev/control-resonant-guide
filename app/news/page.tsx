@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { listAllContent } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata = {
-  title: 'Gaming News & Patch Notes — Control Resonant Wiki',
+  title: 'Gaming News & Patch Notes — Control Resonant Guide',
   description: 'Latest gaming news, patch notes, DLC launch guides, and updates. Stay on top of game changes.',
-  alternates: { canonical: 'https://controlresonantguide.com/news' },
+  alternates: { canonical: `${siteConfig.url}/news` },
 };
 
 export default function NewsPage() {

@@ -8,11 +8,11 @@ import Header from '@/components/header';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Control Resonant Guide — Guides, Weapons & Pre-Order Info',
+    default: 'Control Resonant Guide — Release Date, Weapons & Pre-Order (2026)',
     template: '%s | Control Resonant Guide',
   },
   description:
-    'The unofficial Control Resonant guide hub. Release date, pre-order guide, Aberrant weapon forms, beginner guide, and daily news for Remedy\u2019s September 24, 2026 launch.',
+    'Control Resonant guide hub: release date, pre-order guide, Aberrant weapon forms, beginner tips, and daily news for Remedy\u2019s September 24, 2026 launch.',
   keywords: [
     'control resonant',
     'control 2',
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Control Resonant Guide',
     locale: 'en_US',
-    title: 'Control Resonant Guide — Guides, Weapons & Pre-Order Info',
+    title: 'Control Resonant Guide — Release Date, Weapons & Pre-Order (2026)',
     description:
-      'Release date, pre-order guide, Aberrant weapon forms, beginner guide, and daily news for Remedy\u2019s Control Resonant.',
+      'Release date, pre-order guide, Aberrant weapon forms, beginner tips, and daily news for Remedy\u2019s Control Resonant — September 24, 2026.',
     url: siteConfig.url,
     images: [
       {

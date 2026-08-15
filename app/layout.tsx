@@ -110,24 +110,33 @@ export default function RootLayout({
         {/* ===== Modern Footer ===== */}
         <footer className="mt-20" style={{ background: 'var(--bg-base)' }}>
           {/* Top gradient line */}
-          <div style={{ height: '2px', background: 'linear-gradient(90deg, transparent, rgba(139,92,246,0.5), rgba(59,130,246,0.5), transparent)' }} />
+          <div style={{ height: '2px', background: 'linear-gradient(90deg, transparent, rgba(239,68,68,0.6), rgba(251,191,36,0.5), transparent)' }} />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
             <div className="grid md:grid-cols-4 gap-10">
               {/* Brand */}
               <div className="md:col-span-1">
                 <div className="flex items-center gap-2.5 mb-4">
-                  <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white"
-                    style={{ background: 'linear-gradient(135deg, #8b5cf6, #6366f1)' }}
-                  >
-                    C
-                  </span>
+                  <img src="/logo-mark.svg" alt="" width={28} height={25} className="h-6 w-auto" />
                   <span className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>Control Resonant Guide</span>
                 </div>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
                   The unofficial fan-made guide for Control Resonant. Release date, pre-order info,
                   Aberrant weapon forms, beginner guides, and daily news — updated by real players.
                 </p>
+                <Link
+                  href="/games/control-resonant/preorder-guide"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold text-white transition-all hover:-translate-y-px"
+                  style={{
+                    background: 'linear-gradient(135deg, #ef4444, #f97316)',
+                    boxShadow: '0 2px 12px rgba(239,68,68,0.25)',
+                  }}
+                >
+                  Pre-Order Guide
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
               </div>
 
               {/* Links */}

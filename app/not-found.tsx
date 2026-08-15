@@ -11,7 +11,7 @@ export default function NotFound() {
         <h1
           className="text-7xl md:text-8xl font-extrabold tracking-tighter mb-4"
           style={{
-            background: 'linear-gradient(135deg, #8b5cf6, #6366f1, #3b82f6)',
+            background: 'linear-gradient(135deg, #ef4444, #f97316, #3b82f6)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -41,7 +41,7 @@ export default function NotFound() {
             href="/"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:opacity-80"
             style={{
-              background: 'linear-gradient(135deg, #8b5cf6, #6366f1)',
+              background: 'linear-gradient(135deg, #ef4444, #f97316)',
               color: '#fff',
             }}
           >
@@ -51,9 +51,9 @@ export default function NotFound() {
             href="/games"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
             style={{
-              background: 'rgba(139,92,246,0.08)',
-              border: '1px solid rgba(139,92,246,0.2)',
-              color: '#a78bfa',
+              background: 'rgba(255,90,69,0.08)',
+              border: '1px solid rgba(255,90,69,0.2)',
+              color: '#ff8a75',
             }}
           >
             Browse All Games

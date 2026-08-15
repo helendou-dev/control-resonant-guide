@@ -50,9 +50,9 @@ function TocNav({
             }}
             className="block text-sm leading-relaxed transition-all duration-200 py-1 border-l-2 hover:no-underline"
             style={{
-              color: activeId === h.id ? '#a78bfa' : 'var(--text-muted)',
+              color: activeId === h.id ? '#ff8a75' : 'var(--text-muted)',
               paddingLeft: h.level === 3 ? '1.5rem' : '0.75rem',
-              borderLeftColor: activeId === h.id ? '#a78bfa' : 'transparent',
+              borderLeftColor: activeId === h.id ? '#ff8a75' : 'transparent',
               fontWeight: activeId === h.id ? 500 : 400,
             }}
           >

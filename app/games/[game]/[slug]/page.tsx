@@ -90,7 +90,7 @@ const TYPE_LABEL: Record<string, string> = {
 
 const PLATFORM_COLORS: Record<string, { bg: string; color: string; border: string }> = {
   PC: { bg: 'rgba(100,116,139,0.12)', color: '#94a3b8', border: 'rgba(100,116,139,0.2)' },
-  PS5: { bg: 'rgba(59,130,246,0.12)', color: '#60a5fa', border: 'rgba(59,130,246,0.2)' },
+  PS5: { bg: 'rgba(59,130,246,0.12)', color: '#fbbf24', border: 'rgba(59,130,246,0.2)' },
   PS4: { bg: 'rgba(59,130,246,0.08)', color: '#93c5fd', border: 'rgba(59,130,246,0.15)' },
   Xbox: { bg: 'rgba(16,185,129,0.12)', color: '#34d399', border: 'rgba(16,185,129,0.2)' },
   Switch: { bg: 'rgba(244,63,94,0.12)', color: '#fb7185', border: 'rgba(244,63,94,0.2)' },
@@ -229,14 +229,14 @@ export default async function GameContentPage({
                 <div className="flex flex-wrap gap-2 mt-3">
                   {tags.map((tag: string) => (
                     <span key={tag} className="px-2.5 py-1 rounded-full text-xs"
-                      style={{ background: 'rgba(139,92,246,0.08)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.15)' }}>
+                      style={{ background: 'rgba(255,90,69,0.08)', color: '#ff8a75', border: '1px solid rgba(255,90,69,0.15)' }}>
                       #{tag}
                     </span>
                   ))}
                 </div>
               )}
 
-              <div className="mt-8" style={{ height: '1px', background: 'linear-gradient(90deg, rgba(139,92,246,0.3), transparent)' }} />
+              <div className="mt-8" style={{ height: '1px', background: 'linear-gradient(90deg, rgba(255,90,69,0.3), transparent)' }} />
             </header>
 
             {/* Share buttons */}
@@ -269,9 +269,9 @@ export default async function GameContentPage({
                 href={`/games/${params.game}`}
                 className="inline-flex items-center justify-center rounded-lg transition-all duration-200"
                 style={{
-                  background: 'rgba(139,92,246,0.08)',
-                  border: '1px solid rgba(139,92,246,0.2)',
-                  color: '#a78bfa',
+                  background: 'rgba(255,90,69,0.08)',
+                  border: '1px solid rgba(255,90,69,0.2)',
+                  color: '#ff8a75',
                   padding: '0.6rem',
                 }}
                 aria-label={`Back to ${gameName}`}
@@ -362,7 +362,7 @@ function DesktopTOCSidebar({
             <li key={a.slug}>
               <a
                 href={`/games/${a.game}/${a.slug}`}
-                className="block text-xs leading-snug transition-colors duration-150 hover:no-underline hover:text-[#a78bfa]"
+                className="block text-xs leading-snug transition-colors duration-150 hover:no-underline hover:text-[#ff8a75]"
                 style={{ color: 'var(--text-secondary)' }}
               >
                 {a.title}

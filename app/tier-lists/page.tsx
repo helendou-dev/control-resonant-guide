@@ -17,7 +17,7 @@ export default function TierListsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       <div className="mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4"
-          style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', color: '#a78bfa' }}>
+          style={{ background: 'rgba(255,90,69,0.1)', border: '1px solid rgba(255,90,69,0.2)', color: '#ff8a75' }}>
           🏆 Tier Lists
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2" style={{ color: 'var(--text-primary)' }}>
@@ -45,7 +45,7 @@ export default function TierListsPage() {
                   <span className={`type-badge type-badge-tier absolute top-3 left-3`}>🏆 Tier List</span>
                 </div>
               ) : (
-                <div className="h-1" style={{ background: "linear-gradient(90deg, #8b5cf6, #a78bfa)" }} />
+                <div className="h-1" style={{ background: "linear-gradient(90deg, #ef4444, #ff8a75)" }} />
               )}
               <div className="p-5">
                 {!item.image && <span className="type-badge type-badge-tier">🏆 Tier List</span>}

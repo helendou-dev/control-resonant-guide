@@ -8,7 +8,7 @@ APP_DIR = os.path.join(os.path.dirname(__file__), '..', 'app')
 os.makedirs(APP_DIR, exist_ok=True)
 
 # Colors matching the footer brand gradient
-COLOR_START = (139, 92, 246)   # #8b5cf6 violet-500
+COLOR_START = (239, 68, 68)   # #8b5cf6 violet-500
 COLOR_END = (99, 102, 241)     # #6366f1 indigo-500
 WHITE = (255, 255, 255)
 BG_DARK = (15, 23, 42)         # #0f172a slate-900

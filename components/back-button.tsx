@@ -41,9 +41,9 @@ export default function BackButton({
   }, [canGoBack, fallbackHref, router]);
 
   const pillStyle: React.CSSProperties = {
-    background: 'rgba(139,92,246,0.08)',
-    border: '1px solid rgba(139,92,246,0.2)',
-    color: '#a78bfa',
+    background: 'rgba(255,90,69,0.08)',
+    border: '1px solid rgba(255,90,69,0.2)',
+    color: '#ff8a75',
   };
 
   const textStyle: React.CSSProperties = {
@@ -53,9 +53,9 @@ export default function BackButton({
   };
 
   const iconOnlyStyle: React.CSSProperties = {
-    background: 'rgba(139,92,246,0.08)',
-    border: '1px solid rgba(139,92,246,0.2)',
-    color: '#a78bfa',
+    background: 'rgba(255,90,69,0.08)',
+    border: '1px solid rgba(255,90,69,0.2)',
+    color: '#ff8a75',
     padding: '0.4rem',
   };
 

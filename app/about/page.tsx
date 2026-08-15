@@ -122,8 +122,8 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="text-center p-8 rounded-2xl"
           style={{
-            background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(59,130,246,0.08))',
-            border: '1px solid rgba(139,92,246,0.15)',
+            background: 'linear-gradient(135deg, rgba(255,90,69,0.08), rgba(59,130,246,0.08))',
+            border: '1px solid rgba(255,90,69,0.15)',
           }}>
           <p className="text-lg font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
             Ready to level up your game?

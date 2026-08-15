@@ -17,7 +17,7 @@ export default function NewsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       <div className="mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4"
-          style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', color: '#60a5fa' }}>
+          style={{ background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', color: '#fbbf24' }}>
           📋 Patches & News
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2" style={{ color: 'var(--text-primary)' }}>
@@ -50,7 +50,7 @@ export default function NewsPage() {
                 <div className="h-1" style={{
                   background: item.type === 'news'
                     ? 'linear-gradient(90deg, #f43f5e, #fb7185)'
-                    : 'linear-gradient(90deg, #3b82f6, #60a5fa)',
+                    : 'linear-gradient(90deg, #3b82f6, #fbbf24)',
                 }} />
               )}
               <div className="p-5">

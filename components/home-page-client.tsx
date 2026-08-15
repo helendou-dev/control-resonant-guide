@@ -29,9 +29,19 @@ function formatDate(dateStr: string): string {
   }
 }
 
+const ACCENT = '#ff5a45';
+const ACCENT_LIGHT = '#ff8a75';
+
 // ============================================
 // Data
 // ============================================
+
+const HERO_STATS = [
+  { value: 'Sep 24, 2026', label: 'Release Date' },
+  { value: '$59.99', label: 'Base Price' },
+  { value: '30–50h', label: 'Playtime' },
+  { value: 'PS5 · Xbox · PC', label: 'Platforms' },
+];
 
 const QUICK_FACTS = [
   { label: 'Developer', value: 'Remedy Entertainment' },
@@ -84,14 +94,14 @@ function SectionHeading({ eyebrow, title, subtitle, center }: { eyebrow: string;
       transition={{ duration: 0.5 }}
       className={center ? 'text-center mb-12' : 'mb-10'}
     >
-      <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#a78bfa' }}>
+      <div className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: ACCENT_LIGHT }}>
         {eyebrow}
       </div>
-      <h2 className="text-2xl md:text-3xl font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>
+      <h2 className="text-2xl md:text-4xl font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>
         {title}
       </h2>
       {subtitle && (
-        <p className="text-sm md:text-base mt-2 max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
+        <p className={`text-sm md:text-base mt-3 ${center ? 'max-w-2xl mx-auto' : 'max-w-2xl'}`} style={{ color: 'var(--text-secondary)' }}>
           {subtitle}
         </p>
       )}
@@ -110,7 +120,7 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
       className="rounded-xl overflow-hidden transition-all duration-300"
       style={{
         background: 'var(--bg-elevated)',
-        border: `1px solid ${open ? 'rgba(139,92,246,0.25)' : 'rgba(255,255,255,0.06)'}`,
+        border: `1px solid ${open ? 'rgba(255,90,69,0.3)' : 'rgba(255,255,255,0.06)'}`,
       }}
     >
       <button
@@ -123,11 +133,11 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
         <span
           className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-300"
           style={{
-            background: open ? 'rgba(139,92,246,0.15)' : 'rgba(255,255,255,0.05)',
+            background: open ? 'rgba(255,90,69,0.15)' : 'rgba(255,255,255,0.05)',
             transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
           }}
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#a78bfa' : 'var(--text-muted)'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? ACCENT_LIGHT : 'var(--text-muted)'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </span>
@@ -160,9 +170,9 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
   const featured = guides.slice(0, 3);
 
   const heroShapes = [
-    { color: 'rgba(139,92,246,0.4)', size: 320, x: '8%', y: '15%', delay: 0 },
-    { color: 'rgba(59,130,246,0.3)', size: 260, x: '82%', y: '25%', delay: 2 },
-    { color: 'rgba(6,182,212,0.25)', size: 210, x: '55%', y: '65%', delay: 4 },
+    { color: 'rgba(239,68,68,0.35)', size: 340, x: '6%', y: '12%', delay: 0 },
+    { color: 'rgba(249,115,22,0.28)', size: 280, x: '84%', y: '20%', delay: 2 },
+    { color: 'rgba(251,191,36,0.16)', size: 220, x: '52%', y: '68%', delay: 4 },
   ];
 
   return (
@@ -177,10 +187,10 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-25"
+            className="object-cover opacity-30"
           />
           <div className="absolute inset-0" style={{
-            background: 'radial-gradient(ellipse at 20% 50%, rgba(139,92,246,0.15) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(59,130,246,0.12) 0%, transparent 50%), linear-gradient(to top, var(--bg-deep) 0%, rgba(6,6,11,0.6) 50%, rgba(6,6,11,0.4) 100%)',
+            background: 'radial-gradient(ellipse at 25% 45%, rgba(239,68,68,0.16) 0%, transparent 55%), radial-gradient(ellipse at 78% 25%, rgba(249,115,22,0.12) 0%, transparent 50%), linear-gradient(to top, var(--bg-deep) 0%, rgba(6,6,11,0.55) 50%, rgba(6,6,11,0.35) 100%)',
           }}>
             {heroShapes.map((shape, i) => (
               <motion.div
@@ -202,63 +212,87 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
           }} />
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-24 md:py-32 text-center">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 pt-20 md:pt-28 pb-14 md:pb-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6"
-              style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)', color: '#a78bfa' }}>
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#a78bfa' }} />
-              Unofficial Fan-Made Guide
+            {/* Centered FBC brand mark */}
+            <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+              <img
+                src="/logo-mark.svg"
+                alt=""
+                width={64}
+                height={56}
+                className="h-14 w-auto drop-shadow-[0_0_18px_rgba(255,255,255,0.15)]"
+                style={{ filter: 'drop-shadow(0 0 18px rgba(255,90,69,0.35))' }}
+              />
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4">
-              <span style={{ color: 'var(--text-primary)' }}>Control:</span>{' '}
-              <span className="gradient-text" style={{ color: '#a78bfa' }}>Resonant</span>
+
+            {/* Eyebrow */}
+            <div className="text-xs font-bold uppercase tracking-[0.25em] mb-5" style={{ color: ACCENT_LIGHT }}>
+              A Remedy Entertainment Action RPG · Sep 24, 2026
+            </div>
+
+            {/* Two-line H1 */}
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
+              <span className="block" style={{ color: 'var(--text-primary)' }}>Forge Your Legend</span>
+              <span className="block gradient-text">in Control Resonant</span>
             </h1>
-            <p className="text-lg md:text-xl max-w-xl mx-auto mb-4 leading-relaxed font-medium"
+
+            <p className="text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
               style={{ color: 'var(--text-secondary)' }}>
-              Forge Your Legend in a Warped Manhattan
-            </p>
-            <p className="text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed"
-              style={{ color: 'var(--text-secondary)' }}>
-              Remedy&apos;s paranatural action RPG. Wield the shapeshifting Aberrant weapon, survive a
-              reality-corrupting Hiss outbreak, and uncover what happened to Jesse Faden.
+              Wield the shapeshifting Aberrant, survive a reality-corrupting Hiss outbreak in
+              warped Manhattan, and uncover what happened to Jesse Faden — in Remedy&apos;s
+              biggest action RPG yet.
             </p>
 
-            {/* Key data chips */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-10 text-sm">
-              <span className="px-3 py-1.5 rounded-full font-semibold"
-                style={{ background: 'rgba(139,92,246,0.12)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.2)' }}>
-                📅 Sep 24, 2026
-              </span>
-              <span className="px-3 py-1.5 rounded-full font-semibold"
-                style={{ background: 'rgba(59,130,246,0.12)', color: '#60a5fa', border: '1px solid rgba(59,130,246,0.2)' }}>
-                $59.99
-              </span>
-              <span className="px-3 py-1.5 rounded-full font-semibold"
-                style={{ background: 'rgba(16,185,129,0.12)', color: '#34d399', border: '1px solid rgba(16,185,129,0.2)' }}>
-                PS5 · Xbox · PC · Mac
-              </span>
-              <span className="px-3 py-1.5 rounded-full font-semibold"
-                style={{ background: 'rgba(245,158,11,0.12)', color: '#fbbf24', border: '1px solid rgba(245,158,11,0.2)' }}>
-                ~30h Main Story
-              </span>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Link href="/games/control-resonant/preorder-guide" className="btn-primary">
+            {/* Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+              <Link href="/games/control-resonant/preorder-guide" className="btn-primary !px-8 !py-3.5 !text-base">
                 Pre-Order Guide
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
                 </svg>
               </Link>
-              <Link href="/games/control-resonant/beginner-guide" className="btn-ghost">Beginner Guide</Link>
+              <Link
+                href="/games/control-resonant/beginner-guide"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base transition-all hover:-translate-y-px"
+                style={{
+                  color: 'var(--text-primary)',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                Beginner Guide
+              </Link>
+            </div>
+
+            {/* 4-column stat bar */}
+            <div
+              className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)' }}
+            >
+              {HERO_STATS.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className="py-5 px-2 text-center"
+                  style={{ borderRight: i < HERO_STATS.length - 1 ? '1px solid rgba(255,255,255,0.06)' : undefined }}
+                >
+                  <div className="text-sm md:text-base font-extrabold mb-1" style={{ color: 'var(--text-primary)' }}>
+                    {stat.value}
+                  </div>
+                  <div className="text-[11px] font-semibold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Scroll hint */}
-            <div className="flex flex-col items-center gap-1 opacity-50">
+            <div className="flex flex-col items-center gap-1 mt-12 opacity-50">
               <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Scroll</span>
               <motion.svg
                 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
@@ -276,11 +310,11 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
       </section>
 
       {/* ===== What is Control Resonant? — intro + Quick Facts ===== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
         <SectionHeading
           eyebrow="The Paranatural Sequel"
           title="What is Control Resonant?"
-          subtitle="A standalone sequel set seven years after the events of Control."
+          subtitle="A standalone action RPG sequel set seven years after the events of Control (2019)."
         />
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left: intro text */}
@@ -291,7 +325,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             transition={{ duration: 0.5 }}
           >
             <p className="text-sm md:text-base leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-              Control Resonant is Remedy Entertainment&apos;s 2026 action RPG sequel to Control (2019).
+              Control Resonant is Remedy Entertainment&apos;s 2026 action RPG sequel to Control.
               You play as <strong style={{ color: 'var(--text-primary)' }}>Dylan Faden</strong>, wielding a shapeshifting
               melee weapon called the Aberrant, as a paranatural crisis consumes Manhattan and Jesse Faden disappears.
             </p>
@@ -301,7 +335,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
               Control or not, this is a fresh entry point.
             </p>
             <Link href="/games/control-resonant/beginner-guide" className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-white"
-              style={{ color: '#a78bfa' }}>
+              style={{ color: ACCENT_LIGHT }}>
               Read the Beginner Guide
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
@@ -315,16 +349,16 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl p-6"
+            className="rounded-2xl p-6 md:p-7"
             style={{ background: 'var(--bg-elevated)', border: '1px solid rgba(255,255,255,0.06)' }}
           >
-            <div className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#a78bfa' }}>
+            <div className="text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT_LIGHT }}>
               Quick Facts
             </div>
-            <dl className="space-y-3">
+            <dl>
               {QUICK_FACTS.map((f) => (
-                <div key={f.label} className="flex items-center justify-between gap-4 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                  <dt className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>{f.label}</dt>
+                <div key={f.label} className="flex items-center justify-between gap-4 py-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                  <dt className="text-xs font-medium uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f.label}</dt>
                   <dd className="text-sm font-semibold text-right" style={{ color: 'var(--text-primary)' }}>{f.value}</dd>
                 </div>
               ))}
@@ -334,12 +368,13 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
       </section>
 
       {/* ===== Aberrant Weapon Forms ===== */}
-      <section className="py-16 md:py-20" style={{ background: 'var(--bg-base)' }}>
+      <section className="py-16 md:py-24" style={{ background: 'var(--bg-base)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
             eyebrow="Choose Your Fighting Style"
             title="The Aberrant — Five Weapon Forms"
             subtitle="Dylan's shapeshifting melee weapon. Five forms, five playstyles — one weapon."
+            center
           />
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {ABERRANT_FORMS.map((form, i) => (
@@ -350,15 +385,14 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.4 }}
               >
-                <Link href="/games/control-resonant/aberrant-weapon-forms" className="group block text-center rounded-xl p-6 h-full transition-all duration-300 group-hover:-translate-y-1"
-                  style={{ background: 'var(--bg-elevated)', border: '1px solid rgba(255,255,255,0.06)' }}
-                >
+                <Link href="/games/control-resonant/aberrant-weapon-forms" className="group block text-center rounded-xl p-6 h-full transition-all duration-300 hover:-translate-y-1.5"
+                  style={{ background: 'var(--bg-elevated)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="text-3xl mb-3">{form.icon}</div>
                   <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2"
-                    style={{ background: 'rgba(139,92,246,0.1)', color: '#a78bfa' }}>
+                    style={{ background: 'rgba(255,90,69,0.1)', color: ACCENT_LIGHT }}>
                     {form.tag}
                   </span>
-                  <h3 className="font-bold text-sm mb-1 group-hover:text-purple-400 transition-colors" style={{ color: 'var(--text-primary)' }}>
+                  <h3 className="font-bold text-sm mb-1 group-hover:text-orange-400 transition-colors" style={{ color: 'var(--text-primary)' }}>
                     {form.name}
                   </h3>
                   <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
@@ -372,9 +406,9 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
       </section>
 
       {/* ===== The Codex — content grid ===== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
         <SectionHeading
-          eyebrow="Adventurer's Codex"
+          eyebrow="Agent's Codex"
           title="Start Your Journey"
           subtitle="Every guide you need before launch — and after."
           center
@@ -388,15 +422,14 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.35 }}
             >
-              <Link href={card.href} className="group block text-center rounded-xl p-5 h-full transition-all duration-300 group-hover:-translate-y-1"
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
-              >
+              <Link href={card.href} className="group block text-center rounded-xl p-5 h-full transition-all duration-300 hover:-translate-y-1.5"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <div className="text-2xl mb-2">{card.emoji}</div>
                 <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2"
-                  style={{ background: 'rgba(59,130,246,0.1)', color: '#60a5fa' }}>
+                  style={{ background: 'rgba(251,146,60,0.1)', color: '#fb923c' }}>
                   {card.badge}
                 </span>
-                <h3 className="font-bold text-sm mb-1 group-hover:text-purple-400 transition-colors" style={{ color: 'var(--text-primary)' }}>
+                <h3 className="font-bold text-sm mb-1 group-hover:text-orange-400 transition-colors" style={{ color: 'var(--text-primary)' }}>
                   {card.title}
                 </h3>
                 <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>
@@ -409,7 +442,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
       </section>
 
       {/* ===== Featured Guides ===== */}
-      <section className="py-16 md:py-20" style={{ background: 'var(--bg-base)' }}>
+      <section className="py-16 md:py-24" style={{ background: 'var(--bg-base)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
             eyebrow="Deep Dive"
@@ -451,7 +484,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
                             </div>
                           )}
                           <div className="p-5 flex flex-col flex-1">
-                            <h3 className="font-bold text-base leading-snug mb-2 flex-1 line-clamp-2 group-hover:text-purple-400 transition-colors"
+                            <h3 className="font-bold text-base leading-snug mb-2 flex-1 line-clamp-2 group-hover:text-orange-400 transition-colors"
                               style={{ color: 'var(--text-primary)' }}>
                               {item.title}
                             </h3>
@@ -484,13 +517,13 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
 
       {/* ===== Latest News — timeline style ===== */}
       {news.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
           <SectionHeading
             eyebrow="Latest Updates"
             title="Control Resonant News"
             subtitle="Everything happening around Control Resonant."
           />
-          <div className="max-w-3xl space-y-1">
+          <div className="max-w-3xl">
             {news.slice(0, 5).map((item, i) => {
               const tc = getTypeConfig(item.type);
               return (
@@ -502,11 +535,10 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
                   transition={{ delay: i * 0.06, duration: 0.35 }}
                 >
                   <Link href={item.url} className="group flex items-start gap-4 py-4 border-b transition-colors"
-                    style={{ borderColor: 'rgba(255,255,255,0.04)' }}
-                  >
+                    style={{ borderColor: 'rgba(255,255,255,0.04)' }}>
                     {/* Date column */}
                     <div className="flex-shrink-0 w-20 text-right">
-                      <div className="text-xs font-bold" style={{ color: '#a78bfa' }}>
+                      <div className="text-xs font-bold" style={{ color: ACCENT_LIGHT }}>
                         {formatDate(item.date).split(',')[0]}
                       </div>
                       <div className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
@@ -515,13 +547,13 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
                     </div>
                     {/* Vertical line dot */}
                     <div className="flex-shrink-0 relative flex justify-center" style={{ width: '16px' }}>
-                      <div className="absolute top-1 w-2 h-2 rounded-full" style={{ background: 'rgba(139,92,246,0.4)' }} />
+                      <div className="absolute top-1 w-2 h-2 rounded-full" style={{ background: 'rgba(255,90,69,0.5)' }} />
                       <div className="absolute top-3 bottom-0 w-px" style={{ background: 'rgba(255,255,255,0.04)' }} />
                     </div>
                     {/* Content */}
                     <div className="flex-1 min-w-0 pb-1">
                       <span className={`type-badge ${tc.badgeClass} mb-1.5 inline-block text-[10px]`}>{tc.emoji} {tc.label}</span>
-                      <h3 className="text-sm font-bold leading-snug mb-1 line-clamp-1 group-hover:text-purple-400 transition-colors"
+                      <h3 className="text-sm font-bold leading-snug mb-1 line-clamp-1 group-hover:text-orange-400 transition-colors"
                         style={{ color: 'var(--text-primary)' }}>
                         {item.title}
                       </h3>
@@ -546,7 +578,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
       )}
 
       {/* ===== FAQ — accordion ===== */}
-      <section className="py-16 md:py-20" style={{ background: 'var(--bg-base)' }}>
+      <section className="py-16 md:py-24" style={{ background: 'var(--bg-base)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeading
             eyebrow="Quick Answers"
@@ -571,7 +603,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
       </section>
 
       {/* ===== Bottom CTA — mirrors hero ===== */}
-      <section className="py-16 md:py-20" style={{ background: 'var(--bg-deep)' }}>
+      <section className="py-16 md:py-24" style={{ background: 'var(--bg-deep)' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -580,28 +612,38 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             transition={{ duration: 0.5 }}
             className="p-10 md:p-14 rounded-2xl relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(59,130,246,0.06), rgba(6,182,212,0.04))',
-              border: '1px solid rgba(139,92,246,0.15)',
+              background: 'linear-gradient(135deg, rgba(239,68,68,0.09), rgba(249,115,22,0.07), rgba(251,191,36,0.04))',
+              border: '1px solid rgba(255,90,69,0.18)',
             }}
           >
-            <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#a78bfa' }}>
+            <div className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: ACCENT_LIGHT }}>
               Ready for September 24?
             </div>
-            <h2 className="text-2xl md:text-4xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>
               Forge your legend today.
             </h2>
             <p className="mb-8 max-w-md mx-auto text-sm md:text-base" style={{ color: 'var(--text-secondary)' }}>
               Plan your pre-order, master the Aberrant, and go in ready.
               New Control Resonant guides drop here every day.
             </p>
-            <div className="flex items-center justify-center gap-3 flex-wrap">
-              <Link href="/games/control-resonant/preorder-guide" className="btn-primary">
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Link href="/games/control-resonant/preorder-guide" className="btn-primary !px-8 !py-3.5 !text-base">
                 Pre-Order Guide
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
                 </svg>
               </Link>
-              <Link href="/games/control-resonant/beginner-guide" className="btn-ghost text-base">Beginner Guide</Link>
+              <Link
+                href="/games/control-resonant/beginner-guide"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-base transition-all hover:-translate-y-px"
+                style={{
+                  color: 'var(--text-primary)',
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                }}
+              >
+                Beginner Guide
+              </Link>
             </div>
           </motion.div>
         </div>

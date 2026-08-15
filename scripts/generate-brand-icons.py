@@ -7,8 +7,8 @@ BASE_DIR = "/Users/Zhuanz/WorkBuddy/ControlResonant/website/public"
 os.makedirs(BASE_DIR, exist_ok=True)
 
 BG_COLOR = (10, 10, 18)          # #0a0a12 brand bg
-ACCENT_PURPLE = (139, 92, 246)   # #8b5cf6
-ACCENT_BLUE = (59, 130, 246)     # #3b82f6
+ACCENT_PURPLE = (239, 68, 68)   # #8b5cf6
+ACCENT_BLUE = (249, 115, 22)     # #3b82f6
 TEXT_COLOR = (240, 240, 245)     # #f0f0f5 text-primary
 
 def create_icon(size, is_apple=False):

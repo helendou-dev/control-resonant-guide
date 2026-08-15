@@ -59,8 +59,8 @@ export default function ContactPage() {
       {/* Contact Info Card */}
       <div className="p-8 rounded-2xl text-center"
         style={{
-          background: 'linear-gradient(135deg, rgba(139,92,246,0.06), rgba(59,130,246,0.06))',
-          border: '1px solid rgba(139,92,246,0.12)',
+          background: 'linear-gradient(135deg, rgba(255,90,69,0.06), rgba(59,130,246,0.06))',
+          border: '1px solid rgba(255,90,69,0.12)',
         }}>
         <div className="text-4xl mb-4">📧</div>
         <h2 className="text-lg font-bold mb-2" style={{ color: 'var(--text-primary)' }}>

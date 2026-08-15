@@ -17,7 +17,7 @@ const config: Config = {
           border: 'rgba(255,255,255,0.08)',
         },
         accent: {
-          purple: '#8b5cf6',
+          purple: '#ef4444',
           blue: '#3b82f6',
           cyan: '#06b6d4',
           pink: '#ec4899',
@@ -80,7 +80,7 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-mesh':
-          'radial-gradient(ellipse at 20% 50%, rgba(139,92,246,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(59,130,246,0.1) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, rgba(6,182,212,0.08) 0%, transparent 50%)',
+          'radial-gradient(ellipse at 20% 50%, rgba(239,68,68,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.1) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, rgba(6,182,212,0.08) 0%, transparent 50%)',
       },
     },
   },

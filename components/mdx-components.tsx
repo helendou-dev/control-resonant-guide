@@ -126,7 +126,7 @@ export function StepList({ steps }: { steps: Step[] }) {
       {steps.map((step, i) => (
         <li key={i} className="flex gap-4">
           <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mt-0.5"
-            style={{ background: 'rgba(139,92,246,0.15)', color: '#a78bfa' }}>
+            style={{ background: 'rgba(255,90,69,0.15)', color: '#ff8a75' }}>
             {i + 1}
           </span>
           <div>
@@ -199,7 +199,7 @@ export function GameRating({
 export function PlatformTag({ platform }: { platform: string }) {
   const colors: Record<string, { bg: string; color: string; border: string }> = {
     PC: { bg: 'rgba(100,116,139,0.12)', color: '#94a3b8', border: 'rgba(100,116,139,0.2)' },
-    PS5: { bg: 'rgba(59,130,246,0.12)', color: '#60a5fa', border: 'rgba(59,130,246,0.2)' },
+    PS5: { bg: 'rgba(59,130,246,0.12)', color: '#fbbf24', border: 'rgba(59,130,246,0.2)' },
     PS4: { bg: 'rgba(59,130,246,0.08)', color: '#93c5fd', border: 'rgba(59,130,246,0.15)' },
     Xbox: { bg: 'rgba(16,185,129,0.12)', color: '#34d399', border: 'rgba(16,185,129,0.2)' },
     Switch: { bg: 'rgba(244,63,94,0.12)', color: '#fb7185', border: 'rgba(244,63,94,0.2)' },
@@ -308,7 +308,7 @@ export const mdxComponents = {
   },
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a
-      style={{ color: '#a78bfa', textDecorationColor: 'rgba(139,92,246,0.3)' }}
+      style={{ color: '#ff8a75', textDecorationColor: 'rgba(255,90,69,0.3)' }}
       className="underline hover:decoration-purple-400 transition-colors"
       {...props}
       {...(props.href?.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
@@ -317,8 +317,8 @@ export const mdxComponents = {
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote className="my-6 border-l-4 pl-5 py-3 rounded-r-lg italic"
       style={{
-        background: 'rgba(139,92,246,0.06)',
-        borderColor: 'rgba(139,92,246,0.3)',
+        background: 'rgba(255,90,69,0.06)',
+        borderColor: 'rgba(255,90,69,0.3)',
         color: 'var(--text-secondary)',
       }}
       {...props} />

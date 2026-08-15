@@ -9,7 +9,7 @@ const TEAM_MEMBERS = [
     role: 'Lead Editor',
     emoji: '🎯',
     bio: '10+ years covering RPGs and action games. Former guide writer for IGN and GameSpot.',
-    color: '#8b5cf6',
+    color: '#ef4444',
   },
   {
     name: 'Sarah Kim',
@@ -71,7 +71,7 @@ export default function AboutClient() {
       <section className="relative overflow-hidden py-20 md:py-28" style={{ background: 'var(--bg-deep)' }}>
         {/* Background effects */}
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse at 30% 50%, rgba(139,92,246,0.1) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 30% 50%, rgba(255,90,69,0.1) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.08) 0%, transparent 60%)',
         }} />
         <div className="absolute inset-0 pointer-events-none" style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)',
@@ -153,7 +153,7 @@ export default function AboutClient() {
                 icon: '🏆',
                 title: 'Tier Lists',
                 desc: 'Ranked rankings of weapons, builds, classes, and characters. We tell you what\'s meta, what\'s great, and what to skip.',
-                color: '#8b5cf6',
+                color: '#ef4444',
               },
               {
                 icon: '⚖️',
@@ -298,8 +298,8 @@ export default function AboutClient() {
             transition={{ duration: 0.5 }}
             className="p-10 md:p-14 rounded-2xl relative overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(59,130,246,0.06), rgba(6,182,212,0.04))',
-              border: '1px solid rgba(139,92,246,0.15)',
+              background: 'linear-gradient(135deg, rgba(255,90,69,0.08), rgba(59,130,246,0.06), rgba(6,182,212,0.04))',
+              border: '1px solid rgba(255,90,69,0.15)',
             }}
           >
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ color: 'var(--text-primary)' }}>

@@ -209,11 +209,11 @@ export default function GameHubPage({
           {/* Meta tags */}
           <div className="flex flex-wrap items-center gap-3 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-semibold"
-              style={{ background: 'rgba(139,92,246,0.12)', color: '#a78bfa', border: '1px solid rgba(139,92,246,0.2)' }}>
+              style={{ background: 'rgba(255,90,69,0.12)', color: '#ff8a75', border: '1px solid rgba(255,90,69,0.2)' }}>
               {meta.releaseYear}
             </span>
             <span className="px-3 py-1 rounded-full text-xs font-semibold"
-              style={{ background: 'rgba(59,130,246,0.12)', color: '#60a5fa', border: '1px solid rgba(59,130,246,0.2)' }}>
+              style={{ background: 'rgba(59,130,246,0.12)', color: '#fbbf24', border: '1px solid rgba(59,130,246,0.2)' }}>
               {meta.developer}
             </span>
             <span className="px-3 py-1 rounded-full text-xs font-semibold"

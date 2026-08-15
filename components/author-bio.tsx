@@ -17,7 +17,7 @@ export default function AuthorBio({ author, date }: { author: string; date?: str
     >
       {/* Avatar placeholder */}
       <div className="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-2xl"
-        style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.2), rgba(59,130,246,0.2))', border: '2px solid rgba(139,92,246,0.3)' }}>
+        style={{ background: 'linear-gradient(135deg, rgba(255,90,69,0.2), rgba(59,130,246,0.2))', border: '2px solid rgba(255,90,69,0.3)' }}>
         🎮
       </div>
 
@@ -27,7 +27,7 @@ export default function AuthorBio({ author, date }: { author: string; date?: str
             {author}
           </h3>
           <span className="px-2 py-0.5 rounded-full text-xs font-semibold"
-            style={{ background: 'rgba(139,92,246,0.1)', color: '#a78bfa' }}>
+            style={{ background: 'rgba(255,90,69,0.1)', color: '#ff8a75' }}>
             Control Resonant Guide Editor
           </span>
         </div>

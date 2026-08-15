@@ -160,6 +160,39 @@ export default function GameHubPage({
   const allArticles = listAllContent();
   const gameArticles = allArticles.filter((a) => a.game === params.game);
 
+  // VideoGame JSON-LD — rich result for game knowledge panel
+  const videoGameJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: meta.name,
+    description: meta.description,
+    url: `${siteConfig.url}/games/${params.game}`,
+    image: `${siteConfig.url}${meta.headerImage}`,
+    ...(meta.releaseDate ? { datePublished: meta.releaseDate } : {}),
+    genre: meta.tags,
+    playMode: 'https://schema.org/SinglePlayer',
+    applicationCategory: 'Game',
+    ...(meta.platforms
+      ? {
+          gamePlatform: meta.platforms,
+          operatingSystem: meta.platforms.join(', '),
+        }
+      : {}),
+    developer: { '@type': 'Organization', name: meta.developer },
+    publisher: { '@type': 'Organization', name: meta.publisher },
+  };
+
+  // Breadcrumb JSON-LD
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
+      { '@type': 'ListItem', position: 2, name: 'Games', item: `${siteConfig.url}/games` },
+      { '@type': 'ListItem', position: 3, name: meta.name, item: `${siteConfig.url}/games/${params.game}` },
+    ],
+  };
+
   // Stats by type
   const typeCounts: Record<string, number> = {};
   gameArticles.forEach((a) => {
@@ -168,6 +201,16 @@ export default function GameHubPage({
 
   return (
     <div>
+      {/* Structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoGameJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       {/* ===== Hero Banner ===== */}
       <section className="relative overflow-hidden" style={{ background: 'var(--bg-deep)' }}>
         {/* Background image */}

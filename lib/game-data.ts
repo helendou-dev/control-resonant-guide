@@ -10,8 +10,12 @@ export interface GameMeta {
   headerImage: string;
   description: string;
   releaseYear: string;
+  /** Full ISO release date for VideoGame JSON-LD */
+  releaseDate?: string;
   developer: string;
   publisher: string;
+  /** Platforms for VideoGame JSON-LD gamePlatform */
+  platforms?: string[];
   tags: string[];
   emoji?: string; // for Popular Games etc.
 }
@@ -24,8 +28,10 @@ export const ALL_GAMES: Record<string, GameMeta> = {
     description:
       "Remedy Entertainment's paranatural action RPG sequel. Wield the shapeshifting Aberrant weapon, save a warped Manhattan, and uncover what happened to Jesse Faden. Launching September 24, 2026.",
     releaseYear: '2026',
+    releaseDate: '2026-09-24',
     developer: 'Remedy Entertainment',
     publisher: 'Remedy Entertainment',
+    platforms: ['PlayStation 5', 'Xbox Series X|S', 'PC', 'macOS'],
     tags: ['Action RPG', 'Supernatural', 'Third-Person', 'Single-Player', 'Story-Rich'],
     emoji: '🔮',
   },

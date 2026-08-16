@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!meta) return {};
 
   return {
-    title: { absolute: `${meta.name} Guides, Weapon Tier Lists & News (2026)` },
+    title: { absolute: `${meta.name} Guides: Weapons, Builds & News (2026)` },
     description: meta.description,
     alternates: { canonical: `${siteConfig.url}/games/${params.game}` },
     openGraph: {

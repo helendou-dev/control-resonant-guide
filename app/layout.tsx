@@ -8,7 +8,7 @@ import Header from '@/components/header';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Control Resonant Guide — Release Date, Weapons & Pre-Order (2026)',
+    default: 'Control Resonant Guide 2026: Release Date, Weapons',
     template: '%s | Control Resonant Guide',
   },
   description:
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Control Resonant Guide',
     locale: 'en_US',
-    title: 'Control Resonant Guide — Release Date, Weapons & Pre-Order (2026)',
+    title: 'Control Resonant Guide 2026: Release Date, Weapons',
     description:
       'Release date, pre-order guide, Aberrant weapon forms, beginner tips, and daily news for Remedy\u2019s Control Resonant — September 24, 2026.',
     url: siteConfig.url,

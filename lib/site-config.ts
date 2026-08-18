@@ -7,5 +7,5 @@ export const siteConfig = {
   name: 'Control Resonant Guide',
   url: 'https://www.controlresonantguide.com',
   domain: 'controlresonantguide.com',
-  gaId: process.env.NEXT_PUBLIC_GA_ID || '',
+  gaId: 'G-5NSDMZPQWY',
 };

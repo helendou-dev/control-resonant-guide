@@ -72,6 +72,11 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        {/* Impact (Green Man Gaming affiliate) site verification */}
+        <meta
+          name="impact-site-verification"
+          {...({ value: '6651fa22-a213-4af9-b8cd-3c2f14e76004' } as React.HTMLAttributes<HTMLMetaElement>)}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Organization structured data for Google's Knowledge Graph */}

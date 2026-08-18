@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import React from 'react';
 import { slugify } from '@/lib/slugify';
+import { BuyButton } from '@/components/buy-button';
 
 /** Extract plain text from React children for slug generation */
 function childrenToText(children: React.ReactNode): string {
@@ -247,6 +248,7 @@ export const mdxComponents = {
   StepList,
   PlatformTag,
   GameRating,
+  BuyButton,
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => {
     const text = childrenToText(props.children);
     const id = props.id || (text ? slugify(text) : undefined);

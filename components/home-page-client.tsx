@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -161,6 +161,76 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
 }
 
 // ============================================
+// Launch countdown (client-side, avoids hydration mismatch)
+// ============================================
+
+function ReleaseCountdown() {
+  const target = useMemo(() => new Date('2026-09-24T00:00:00').getTime(), []);
+  const [now, setNow] = useState<number | null>(null);
+
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const diff = now === null ? 0 : Math.max(0, target - now);
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const minutes = Math.floor((diff % 3600000) / 60000);
+  const seconds = Math.floor((diff % 60000) / 1000);
+
+  const units = [
+    { v: days, l: 'Days' },
+    { v: hours, l: 'Hours' },
+    { v: minutes, l: 'Mins' },
+    { v: seconds, l: 'Secs' },
+  ];
+
+  if (now !== null && diff <= 0) {
+    return (
+      <div
+        className="max-w-3xl mx-auto mb-8 rounded-2xl px-6 py-4 flex items-center justify-center gap-3"
+        style={{ background: 'rgba(255,90,69,0.08)', border: '1px solid rgba(255,90,69,0.3)', backdropFilter: 'blur(8px)' }}
+      >
+        <span className="text-sm md:text-base font-extrabold tracking-wide" style={{ color: ACCENT_LIGHT }}>
+          🎮 Control Resonant is OUT NOW — September 24, 2026
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="max-w-3xl mx-auto mb-8 rounded-2xl px-6 py-4 flex items-center justify-center gap-4 md:gap-6 flex-wrap"
+      style={{ background: 'rgba(255,90,69,0.06)', border: '1px solid rgba(255,90,69,0.22)', backdropFilter: 'blur(8px)' }}
+    >
+      <div className="flex items-center gap-2">
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: ACCENT }} />
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5" style={{ background: ACCENT }} />
+        </span>
+        <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em]" style={{ color: ACCENT_LIGHT }}>
+          Launch Countdown
+        </span>
+      </div>
+      <div className="flex items-center gap-3 md:gap-4">
+        {units.map((u) => (
+          <div key={u.l} className="text-center">
+            <div className="text-xl md:text-2xl font-extrabold tabular-nums leading-none" style={{ color: 'var(--text-primary)' }}>
+              {now === null ? '--' : String(u.v).padStart(2, '0')}
+            </div>
+            <div className="text-[9px] md:text-[10px] font-semibold uppercase tracking-wider mt-1" style={{ color: 'var(--text-muted)' }}>
+              {u.l}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ============================================
 // Page
 // ============================================
 
@@ -249,7 +319,7 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
               <Link href="/games/control-resonant/preorder-guide" className="btn-primary !px-8 !py-3.5 !text-base">
                 Pre-Order Guide
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -269,6 +339,9 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
                 Beginner Guide
               </Link>
             </div>
+
+            {/* Launch countdown */}
+            <ReleaseCountdown />
 
             {/* 4-column stat bar */}
             <div

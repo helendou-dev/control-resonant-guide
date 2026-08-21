@@ -66,7 +66,7 @@ export function BuyButton({
 
       <p className="text-xs mt-3 leading-relaxed" style={{ color: 'var(--text-muted, #9ca3af)' }}>
         {note ||
-          'Physical Steelbook Edition. Digital Standard / Deluxe editions (with 48-hour PS5 early access) are available on the PlayStation Store, Xbox Store, Steam, and Epic.'}
+          'Physical Steelbook Edition ships October 15, 2026. Want to play on day one? Digital Standard / Deluxe editions launch September 24 — with 48-hour PS5 early access from September 22 on the PlayStation Store, Xbox Store, Steam, and Epic.'}
         {' '}As an Amazon Associate, we earn from qualifying purchases.
       </p>
     </div>

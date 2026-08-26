@@ -22,6 +22,7 @@ import RelatedArticles from '@/components/related-articles';
 import AuthorBio from '@/components/author-bio';
 import AnalyticsTracker from '@/components/analytics-tracker';
 import ReadingProgressBar from '@/components/reading-progress';
+import AdBanner from '@/components/ad-banner';
 
 export function generateStaticParams() {
   const pages = listAllContent();
@@ -239,6 +240,9 @@ export default async function GameContentPage({
               <div className="mt-8" style={{ height: '1px', background: 'linear-gradient(90deg, rgba(255,90,69,0.3), transparent)' }} />
             </header>
 
+            {/* Ad slot: adaptive container (desktop leaderboard / mobile skyscraper) */}
+            <AdBanner variant="auto" />
+
             {/* Share buttons */}
             <div className="flex items-center justify-between gap-4 -mt-2 mb-6">
               <span className="text-xs" style={{ color: 'var(--text-muted)' }}>Share this article</span>
@@ -249,6 +253,9 @@ export default async function GameContentPage({
             <div className="article-body">
               <MDXRemote source={content.content} components={mdxComponents} />
             </div>
+
+            {/* Ad slot: 300x250 rectangle after article body */}
+            <AdBanner variant="rectangle" />
 
             {/* GA4 Enhanced Event Tracking */}
             <AnalyticsTracker />

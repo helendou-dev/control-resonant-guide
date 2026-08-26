@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { listAllContent, ContentListItem } from '@/lib/content';
 import { ALL_GAMES } from '@/lib/game-data';
 import { siteConfig } from '@/lib/site-config';
+import AdBanner from '@/components/ad-banner';
 
 export function generateStaticParams() {
   const allArticles = listAllContent();
@@ -290,6 +291,8 @@ export default function GameHubPage({
 
       {/* ===== Article Sections ===== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        {/* Ad slot: 728x90 leaderboard under hero */}
+        <AdBanner variant="leaderboard" />
 
         {gameArticles.length === 0 ? (
           <div className="text-center py-20">

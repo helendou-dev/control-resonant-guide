@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { ContentListItem } from '@/lib/content';
+import AdBanner from '@/components/ad-banner';
 
 const TYPE_CONFIG: Record<string, { emoji: string; label: string; badgeClass: string }> = {
   guide: { emoji: '📖', label: 'Guide', badgeClass: 'type-badge-guide' },
@@ -381,6 +382,11 @@ export default function HomePageClient({ allArticles }: { allArticles: ContentLi
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to top, var(--bg-deep), transparent)' }} />
       </section>
+
+      {/* Ad slot: adaptive container right below hero */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
+        <AdBanner variant="auto" />
+      </div>
 
       {/* ===== What is Control Resonant? — intro + Quick Facts ===== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">

@@ -129,6 +129,9 @@ export default async function GameContentPage({
   const heroImage = (frontmatter.image as string) || (frontmatter.ogImage as string) || (frontmatter.headerImage as string) || '';
   const author = (frontmatter.author as string) || 'Control Resonant Guide';
   const publishDate = frontmatter.publishDate || frontmatter.date;
+  // Only surface an "updated" stamp when the page really changed after publication.
+  const modifiedDate = (frontmatter.modifiedDate as string) || '';
+  const updatedDate = modifiedDate && publishDate && modifiedDate > publishDate ? modifiedDate : '';
 
   const allArticles = listAllContent();
 
@@ -207,6 +210,13 @@ export default async function GameContentPage({
                 {publishDate && (
                   <time dateTime={publishDate}>
                     📅 {new Date(publishDate).toLocaleDateString('en-US', {
+                      year: 'numeric', month: 'long', day: 'numeric',
+                    })}
+                  </time>
+                )}
+                {updatedDate && (
+                  <time dateTime={updatedDate} style={{ color: '#ff8a75' }}>
+                    🔄 Updated {new Date(updatedDate).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'long', day: 'numeric',
                     })}
                   </time>

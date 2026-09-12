@@ -6,7 +6,8 @@
     "dev": "next dev -p 3457",
     "build": "next build",
     "start": "next start -p 3457",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync-dates": "node scripts/sync-modified-dates.mjs"
   },
   "dependencies": {
     "@mdx-js/mdx": "^3.0.1",

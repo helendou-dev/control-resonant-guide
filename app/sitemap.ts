@@ -95,10 +95,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const contentRoutes: MetadataRoute.Sitemap = pages.map((p) => {
     const isNews = p.type === 'news' || p.type === 'patch_notes';
     const isGuide = p.type === 'guide';
+    // Use the true last-modified stamp (frontmatter `modifiedDate`), NOT the
+    // publish date — otherwise every post-publication update is invisible here.
+    const stamp = p.lastModified || p.date;
 
     return {
       url: `${baseUrl}/games/${p.game}/${p.slug}`,
-      lastModified: p.date ? new Date(p.date) : new Date(),
+      lastModified: stamp ? new Date(stamp) : new Date(),
       changeFrequency: (isNews ? 'daily' : 'weekly') as 'daily' | 'weekly',
       priority: isGuide ? 0.9 : isNews ? 0.7 : 0.8,
     };

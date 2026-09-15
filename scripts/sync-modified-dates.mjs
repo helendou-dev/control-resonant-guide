@@ -14,7 +14,10 @@
  *   to Google — the sitemap keeps claiming the original publish date forever.
  *
  * HOW THE DATE IS DERIVED
- *   base  = date of the last commit that touched the file
+ *   base  = date of the last commit that made a real content change to the
+ *           file (commits that ONLY touch the `modifiedDate` line — like
+ *           this script's own output — are skipped, otherwise each run
+ *           drifts the date forward and the script stops being idempotent)
  *   if the working tree has uncommitted changes for the file -> use the file's
  *   mtime instead (that is the edit you have not committed yet)
  *   result = whichever is later
@@ -62,16 +65,51 @@ const git = (args) =>
 
 const toISODate = (d) => new Date(d).toISOString().slice(0, 10);
 
+const stripModifiedDate = (src) => src.replace(/^modifiedDate:.*\r?\n?/m, '');
+const normalize = (src) => stripModifiedDate(src).replace(/\r\n/g, '\n');
+
+const showFile = (ref, rel) => {
+  try {
+    return execFileSync('git', ['show', `${ref}:${rel}`], {
+      cwd: ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+  } catch {
+    return null; // file absent from this ref
+  }
+};
+
+/**
+ * Date of the last commit that made a REAL content change to the file —
+ * i.e. one that survives stripping the `modifiedDate` line. Without this,
+ * the sync commit itself (which only rewrites `modifiedDate`) becomes the
+ * file's "last commit", and every subsequent run drifts the date forward
+ * one run at a time until it collapses to "always today".
+ */
 function lastCommitDate(rel) {
   try {
-    return git(['log', '-1', '--format=%ad', '--date=short', '--', rel]) || null;
+    const log = git(['log', '--format=%H %ad', '--date=short', '--', rel]);
+    if (!log) return null;
+    for (const line of log.split('\n')) {
+      const spaceAt = line.indexOf(' ');
+      if (spaceAt < 0) continue;
+      const hash = line.slice(0, spaceAt);
+      const date = line.slice(spaceAt + 1).trim();
+      if (!hash || !date) continue;
+      const cur = showFile(hash, rel);
+      const parent = showFile(`${hash}^`, rel);
+      // Real content change = the diff survives stripping modifiedDate lines.
+      // (parent === null means the file was added in this commit.)
+      if (cur !== null && normalize(cur) !== (parent === null ? '' : normalize(parent))) {
+        return date;
+      }
+    }
+    return null;
   } catch {
     return null;
   }
 }
-
-const stripModifiedDate = (src) => src.replace(/^modifiedDate:.*\r?\n?/m, '');
-const normalize = (src) => stripModifiedDate(src).replace(/\r\n/g, '\n');
 
 /**
  * True only when the working tree differs from HEAD in some way OTHER than the
